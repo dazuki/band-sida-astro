@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
     location?: string;
     date?: string;
@@ -24,6 +26,8 @@ const {
     bgCSS = "",
     maps = "https://www.google.com/no-map",
 } = Astro.props;
+
+import imageSwish from "../images/swish.png";
 ---
 
 <div
@@ -61,8 +65,8 @@ const {
     {
         entrance && (
             <p class="flex-row justify-center items-center bg-sky-900 bg-opacity-80 rounded-b-lg p-2 py-4 text-xl">
-                <img
-                    src="images/swish.png"
+                <Image
+                    src={imageSwish}
                     alt="Swish"
                     class="inline-block w-24 -mt-1 mr-2"
                 />
