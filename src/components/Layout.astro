@@ -1,0 +1,101 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import Fireflies from "../components/Fireflies.astro";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" transition:animate="none">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="images/favicon/site.webmanifest">
+        <title>HOT RAILS • {title}</title>
+        <ViewTransitions />
+    </head>
+    <body class="body-imgbg">
+        <Fireflies />
+        <main transition:animate="fade">
+            <slot />
+        </main>
+    </body>
+</html>
+
+<style is:global>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    .two-lads-bg {
+        background: url("/images/two_lads.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+
+    .body-imgbg {
+        background: url("/images/bg-clear.png");
+        background-position: center;
+        background-color: #300000;
+    }
+
+    .body-bg {
+        background-color: #300000;
+    }
+
+    .box-bg {
+        background-color: #451111;
+    }
+
+    .border-bgred {
+        border-color: #300000;
+    }
+</style>
+
+<script>
+    import anime from "animejs";
+
+    document.addEventListener("astro:page-load", () => {
+        anime({
+            targets: "#splash",
+            translateY: [3, 0, 3, 0],
+            rotate: [0, 1, 0, -1, 0],
+            easing: "easeInOutElastic(1, .5)",
+            duration: 3000,
+            loop: true,
+        });
+
+        anime({
+            targets: ".anim-oss",
+            opacity: [0, 1],
+            scale: [0.9, 1],
+            easing: "spring(1, 80, 10, 0)",
+            delay: anime.stagger(300),
+            duration: 900,
+        });
+
+        anime({
+            targets: ".hot-text",
+            color: ["#fdbb74", "#FF0000", "#FFFF00", "#FFF", "#fdbb74"],
+            easing: "linear",
+            duration: 5000,
+            loop: true,
+        });
+
+        anime({
+            targets: ".body-imgbg",
+            backgroundPositionY: [0, "-632px"], //632px
+            backgroundPositionX: [0, "634px"], //634px
+            easing: "linear",
+            duration: 20000,
+            loop: true,
+        });
+    });
+</script>

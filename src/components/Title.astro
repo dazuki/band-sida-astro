@@ -1,0 +1,13 @@
+---
+const { title = "?" } = Astro.props;
+---
+
+<p
+    class="text-left ml-6 sm:ml-20 text-lg pb-1 font-semibold text-orange-300 drop-shadow-lg"
+>
+    <span
+        class="bg-red-900 border-dashed border-l-2 border-r-2 border-t-2 border-orange-300 px-4 p-2 rounded-t-lg"
+        ><span class="text-white">{title}</span>
+        <slot />
+    </span>
+</p>

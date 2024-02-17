@@ -1,0 +1,73 @@
+---
+interface Props {
+    location?: string;
+    date?: string;
+    year?: string;
+    city?: string;
+    time?: string;
+    entrance?: boolean;
+    cost?: string;
+    inactive?: boolean;
+    bgCSS?: string;
+    maps?: string;
+}
+
+const {
+    location = "???",
+    date = "?/?",
+    year = "2024",
+    city = "???",
+    time = "??.??",
+    entrance = false,
+    cost = "???",
+    inactive = false,
+    bgCSS = "",
+    maps = "https://www.google.com/no-map",
+} = Astro.props;
+---
+
+<div
+    class={`${inactive && "grayscale opacity-70"} ${bgCSS} text-center text-lg box-bg rounded-xl w-full mb-4 drop-shadow-lg border-t-2 border-orange-300`}
+>
+    <p class="bg-black bg-opacity-50 rounded-t-lg pt-2 pb-2 text-2xl">
+        <span class="font-semibold">{date}</span>
+        ({year})
+    </p>
+    <p class="bg-black bg-opacity-50 pt-2 pb-2 text-lg font-semibold">
+        <a
+            href={maps}
+            class="hover:text-red-400 text-2xl border-2 border-orange-300 p-2 bg-black hover:bg-black bg-opacity-70 rounded-lg"
+            ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="inline-block -mt-1 w-6 h-6"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z"
+                ></path>
+            </svg>
+            {location}</a
+        >
+    </p>
+    <p class="bg-black bg-opacity-50 pt-2">{city}</p>
+    <p class={`${!entrance && "rounded-b-lg"} bg-black bg-opacity-50 p-2`}>
+        KL. {time}
+    </p>
+    {
+        entrance && (
+            <p class="flex-row justify-center items-center bg-sky-900 bg-opacity-80 rounded-b-lg p-2 py-4 text-xl">
+                <img
+                    src="images/swish.png"
+                    alt="Swish"
+                    class="inline-block w-24 -mt-1 mr-2"
+                />
+                <span class="font-bold">{cost} SEK</span> / Person
+            </p>
+        )
+    }
+</div>
