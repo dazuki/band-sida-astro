@@ -3,7 +3,10 @@ const pathname = new URL(Astro.request.url).pathname;
 /*const navUrl = pathname.slice(1);*/ // remove the first "/"
 ---
 
-<section class="bg-transparent text-white mx-auto pt-8 w-full top-0 z-50">
+<section
+    class="bg-transparent text-white mx-auto pt-8 w-full top-0 z-50"
+    transition:animate="none"
+>
     <!-- <p class="text-center">{pathname}</p> -->
     <nav
         class="flex items-center justify-center py-4 sm:py-4 mx-auto max-w-4xl antialiased"
