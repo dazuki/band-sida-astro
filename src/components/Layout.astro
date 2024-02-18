@@ -35,13 +35,13 @@ const { title } = Astro.props;
     }
 
     .two-lads-bg {
-        background: url("/images/two_lads.jpg");
+        background: url("/images/two_lads.webp");
         background-position: center;
         background-size: cover;
     }
 
     .body-imgbg {
-        background: url("/images/bg-clear.png");
+        background: url("/images/bg-clear.webp");
         background-position: center;
         background-color: #300000;
     }
@@ -75,10 +75,9 @@ const { title } = Astro.props;
         anime({
             targets: ".anim-oss",
             opacity: [0, 1],
-            scale: [0.9, 1],
             easing: "spring(1, 80, 10, 0)",
-            delay: anime.stagger(300),
-            duration: 900,
+            /*delay: anime.stagger(300),*/
+            duration: 700,
         });
 
         anime({
