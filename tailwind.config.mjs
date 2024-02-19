@@ -4,7 +4,8 @@ export default {
     theme: {
         extend: {},
         fontFamily: {
-            sans: ["Montserrat", "sans-serif"],
+            sans: ["RocknRoll One", "sans-serif"],
+            /*sans: ["Montserrat", "sans-serif"],*/
         },
     },
     plugins: [],
