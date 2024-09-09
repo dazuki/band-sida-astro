@@ -5,8 +5,7 @@ import MainContainer from "../components/MainContainer.astro";
 import Title from "../components/Title.astro";
 import Spelning from "../components/Spelning.astro";
 
-/*const spelningar = true;*/
-const spelningar = false;
+const spelningar = true;
 ---
 
 <Layout title="Spelningar">
@@ -22,6 +21,15 @@ const spelningar = false;
                 </div>
             )
         }
+
+        <Spelning
+            location="Two Lads Pub"
+            date="?/? ???"
+            city="Alingsås (Mer info kommer snart!)"
+            time="??.??"
+            bgCSS="two-lads-bg"
+            maps="https://maps.app.goo.gl/gejYLygGS43jnHFz9"
+        />
 
         <Spelning
             inactive
