@@ -6,7 +6,6 @@ const pathname = new URL(Astro.request.url).pathname;
 <section
     class="bg-transparent text-white mx-auto pt-8 w-full top-0 z-50"
 >
-    <!-- <p class="text-center">{pathname}</p> -->
     <nav
         class="flex items-center justify-center py-4 sm:py-4 mx-auto max-w-4xl antialiased"
     >
@@ -16,7 +15,7 @@ const pathname = new URL(Astro.request.url).pathname;
                 class={pathname === "/"
                     ? "current max-sm:font-normal bg-red-900 text-orange-300 border-b-2 border-orange-300 py-1 rounded-lg sm:py-1 hover:text-orange-300 px-1"
                     : "max-sm:font-normal py-1 rounded-lg sm:py-1 hover:text-orange-300 px-1"}
-                data-astro-prefetch="viewport">HEM</a
+                >HEM</a
             >
             ·
             <a
@@ -24,7 +23,7 @@ const pathname = new URL(Astro.request.url).pathname;
                 class={pathname === "/om-oss/"
                     ? "current max-sm:font-normal bg-red-900 text-orange-300 border-b-2 border-orange-300 py-1 rounded-lg sm:py-1 hover:text-orange-300 px-1"
                     : "max-sm:font-normal py-1 rounded-lg sm:py-1 hover:text-orange-300 px-1"}
-                data-astro-prefetch="viewport">BANDET</a
+                >BANDET</a
             >
             ·
             <a
@@ -32,7 +31,7 @@ const pathname = new URL(Astro.request.url).pathname;
                 class={pathname === "/spelningar/"
                     ? "current max-sm:font-normal bg-red-900 text-orange-300 border-b-2 border-orange-300 py-1 rounded-lg sm:py-1 hover:text-orange-300 px-1"
                     : "max-sm:font-normal py-1 rounded-lg sm:py-1 hover:text-orange-300 px-1"}
-                data-astro-prefetch="viewport">SPELNINGAR</a
+                >SPELNINGAR</a
             >
             ·
             <a
@@ -40,7 +39,7 @@ const pathname = new URL(Astro.request.url).pathname;
                 class={pathname === "/kontakt/"
                     ? "current max-sm:font-normal bg-red-900 text-orange-300 border-b-2 border-orange-300 py-1 rounded-lg sm:py-1 hover:text-orange-300 px-1"
                     : "max-sm:font-normal py-1 rounded-lg sm:py-1 hover:text-orange-300 px-1"}
-                data-astro-prefetch="viewport">KONTAKT</a
+                >KONTAKT</a
             >
         </div>
     </nav>
